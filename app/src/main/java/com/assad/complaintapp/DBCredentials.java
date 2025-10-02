@@ -2,9 +2,9 @@ package com.assad.complaintapp;
 
 public class DBCredentials {
     String driver = "oracle.jdbc.driver.OracleDriver";
-    String url = "jdbc:oracle:thin:@//192.168.112.9:1521/ORCL";
-    String username = "MDM";
-    String password = "MDM";
+    String url = "jdbc:oracle:thin:@//192.168.0.0:1521/DB";
+    String username = "master";
+    String password = "master";
 
     public DBCredentials() {
 
