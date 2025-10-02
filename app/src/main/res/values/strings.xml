@@ -1,0 +1,13 @@
+
+<resources>
+<string name="app_name">অভিযোগ বাক্স</string>
+<string name="app_name1">...</string>
+<string-array name="complaint_array">
+    <item>Pending</item>
+    <item>Done</item>
+    <item>In Progress</item>
+</string-array>
+    <string name="open"></string>
+    <string name="close"></string>
+    <string name="default_spinner_value">Select an item</string>
+</resources>

@@ -1,0 +1,100 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="7dp"
+    android:paddingBottom="7dp"
+    android:orientation="horizontal"
+    android:background="@drawable/border"> <!-- Apply border to LinearLayout -->
+
+    <TextView
+        android:id="@+id/textViewId"
+        android:layout_width="0dp"
+        android:text="ID"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        /> <!-- Apply border to TextView -->
+
+    <TextView
+        android:id="@+id/textViewDate"
+        android:layout_width="0dp"
+        android:text="তারিখ"
+        android:textSize="20sp"
+        android:textColor="@color/text_color"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        />
+
+    <TextView
+        android:id="@+id/textViewFactory"
+        android:layout_width="0dp"
+        android:text="ইউনিটের নাম"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        />
+    <TextView
+        android:id="@+id/textViewGroup"
+        android:layout_width="0dp"
+        android:text="অভিযোগের প্রকার"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        />
+
+    <TextView
+        android:id="@+id/textViewType"
+        android:layout_width="0dp"
+        android:text="Type"
+        android:visibility="gone"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        />
+
+
+    <TextView
+        android:id="@+id/textViewSubtype"
+        android:layout_width="0dp"
+        android:text="লেভেল"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        />
+
+    <TextView
+        android:id="@+id/textViewDetail"
+        android:layout_width="0dp"
+        android:text="বিস্তারিতঃ"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        />
+
+    <TextView
+        android:id="@+id/textViewRemarks"
+        android:layout_width="0dp"
+        android:text="Remarks"
+        android:visibility="gone"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        />
+
+    <TextView
+        android:id="@+id/complaintStatus"
+        android:layout_width="0dp"
+        android:text="Status"
+        android:gravity="center"
+        android:textColor="@color/text_color"
+        android:textSize="20sp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        />
+
+
+</LinearLayout>

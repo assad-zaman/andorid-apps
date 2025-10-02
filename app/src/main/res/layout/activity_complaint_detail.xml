@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_expense_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ComplaintDetail">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="35dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/appBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:visibility="visible"
+                android:background="@color/green"
+                >
+
+                <ImageView
+                    android:id="@+id/imageMenu"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:src="@drawable/ic_menu"
+                    app:tint="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:id="@+id/textTile"
+                    android:layout_gravity="center"
+                    android:textColor="@color/yellow"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/text_name_designation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1.5"
+                    android:text="name and Designation"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingTop="5dp"
+                android:background="@drawable/border"
+                android:stretchColumns="1,2,3">
+
+                <TableRow>
+                    <TextView
+                        android:text="তারিখ"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:layout_weight="1" />
+                    <TextView
+                        android:text="ইউনিটের নাম"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:layout_weight="2" />
+                    <TextView
+                        android:text="অভিযোগের প্রকার"
+                        android:layout_width="0dp"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+                    <TextView
+                        android:text="লেভেল"
+                        android:layout_width="0dp"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+                    <TextView
+                        android:text="বিস্তারিতঃ"
+                        android:layout_width="0dp"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="2" />
+
+                    <TextView
+                        android:text="স্ট্যাটাস"
+                        android:layout_width="0dp"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1" />
+
+
+                </TableRow>
+
+
+            </TableLayout>
+
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:id="@+id/recyclerView">
+
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/drawer_header_layout"
+        android:id="@+id/detail_nav_view"
+        android:layout_gravity="start"
+        app:menu="@menu/navigation_menu"
+
+        />
+
+
+</androidx.drawerlayout.widget.DrawerLayout>

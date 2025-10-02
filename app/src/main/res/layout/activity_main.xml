@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background_color"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="35dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/appBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:visibility="visible"
+                android:background="@color/green"
+                >
+
+                <ImageView
+                    android:id="@+id/imageMenu"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_gravity="center"
+                    android:layout_weight=".5"
+                    android:src="@drawable/ic_menu"
+                    app:tint="#FFFFFF" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="3"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:id="@+id/textTile"
+                    android:layout_gravity="center"
+                    android:textColor="@color/yellow"
+                    android:textSize="40sp"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/text_name_designation"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="1.5"
+                    android:text="name and Designation"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+
+            </LinearLayout>
+
+            <LinearLayout android:padding="5dp"
+                android:gravity="center"
+                android:id="@+id/layout_admin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="300dp"
+                    android:layout_margin="5dp"
+                    android:onClick="eventCompletedClicked">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar3"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:indeterminate="false"
+                        android:background="@drawable/circle_shape"
+                        android:progressDrawable="@drawable/progressbar_circular"/>
+
+
+                    <TextView
+                        android:id="@+id/textViewProgressbar3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="..."
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/red"/>
+
+                    <TextView
+                        android:id="@+id/textCompleted"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:text="সমাধান হয়েছে"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gray"/>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="300dp"
+                    android:layout_margin="5dp"
+                    android:onClick="eventInProgressClicked">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar4"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:indeterminate="false"
+                        android:background="@drawable/circle_shape"
+                        android:progressDrawable="@drawable/progressbar_circular"/>
+
+
+                    <TextView
+                        android:id="@+id/textViewProgressbar4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="..."
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/red"/>
+
+                    <TextView
+                        android:id="@+id/textInProgress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:text="প্রক্রিয়াধীন আছে"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gray"/>
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="300dp"
+                    android:onClick="eventInPendingClicked"
+                    android:layout_margin="5dp">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar1"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:indeterminate="false"
+                        android:background="@drawable/circle_shape"
+                        android:progressDrawable="@drawable/progressbar_circular"/>
+
+
+                    <TextView
+                        android:id="@+id/textViewProgressbar1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="..."
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/red"/>
+
+                    <TextView
+                        android:id="@+id/textPending"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:text="অপেক্ষমান"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gray"/>
+
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="300dp"
+                    android:onClick="eventCancelledClicked"
+                    android:layout_margin="5dp">
+
+                    <ProgressBar
+                        android:id="@+id/progressBar2"
+                        style="?android:attr/progressBarStyleHorizontal"
+                        android:layout_width="200dp"
+                        android:layout_height="200dp"
+                        android:layout_centerInParent="true"
+                        android:indeterminate="false"
+                        android:background="@drawable/circle_shape"
+                        android:progressDrawable="@drawable/progressbar_circular"/>
+
+
+                    <TextView
+                        android:id="@+id/textViewProgressbar2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="..."
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/red"/>
+
+                    <TextView
+                        android:id="@+id/textCancelled"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentRight="true"
+                        android:gravity="center"
+                        android:text="বাতিল করা হয়েছে"
+                        android:textSize="28sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/gray"/>
+                </RelativeLayout>
+
+                </LinearLayout>
+
+
+                <LinearLayout android:padding="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:orientation="horizontal">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.assad.complaintapp.CustomCalendarView
+                            android:id="@+id/calendarView"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerInParent="true"
+                            android:background="@color/white"
+                            android:dateTextAppearance="@style/CalendarDateTextAppearance"
+                            android:selectedWeekBackgroundColor="@color/white"
+                            android:weekDayTextAppearance="@style/CalendarWeekDayTextAppearance"
+                            android:focusedMonthDateColor="@color/accent_color"
+                            android:unfocusedMonthDateColor="@color/gray"
+
+                            />
+
+                        <TextView
+                            android:id="@+id/textCalendar"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/calendarView"
+                            android:layout_centerHorizontal="true"
+                            android:textSize="18sp"
+                            android:text="..."
+                            android:textColor="@android:color/black"/>
+                    </RelativeLayout>
+
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+            <LinearLayout android:padding="10dp"
+                android:gravity="center"
+                android:id="@+id/layout_user"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="মতামত সিলেক্ট করুন"
+                    android:textSize="25sp"
+                    android:textColor="@color/text_color"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="16dp" />
+
+
+                <Spinner
+                    android:id="@+id/spinner1"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/spinner_background" />
+
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/spinner_background" />
+
+                <Spinner
+                    android:id="@+id/spinner3"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:layout_marginBottom="16dp"
+                    android:background="@drawable/spinner_background" />
+
+                <EditText
+                    android:id="@+id/editText"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:textSize="25sp"
+                    android:background="@drawable/edittext_background"
+                    android:hint="এখানে লিখুন "
+                    android:textAlignment="center"
+                    android:textColor="@color/text_color"
+                    />
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".75"
+                    android:paddingStart="150dp"
+                    android:paddingEnd="150dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="0dp"
+                        android:layout_weight="3"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginEnd="20dp"
+                        android:text="Save"
+                        android:backgroundTint="@color/green"
+                        android:onClick="buttonSaveData"
+                        android:textSize="24sp">
+                    </Button>
+                    <Button
+                        android:id="@+id/clear"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_marginTop="5dp"
+                        android:backgroundTint="@color/red"
+                        android:layout_height="match_parent"
+                        android:padding="10dp"
+                        android:text="Clear"
+                        android:onClick="buttonClearData"
+                        android:textSize="24sp">
+                    </Button>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight=".5"
+                    android:orientation="horizontal">
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/drawer_header_layout"
+        android:id="@+id/nav_view"
+        android:layout_gravity="start"
+        app:menu="@menu/navigation_menu" />
+</androidx.drawerlayout.widget.DrawerLayout>
